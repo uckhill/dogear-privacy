@@ -1,0 +1,68 @@
+DogEar Privacy Policy
+Last updated: [December 16, 2025]
+
+DogEar respects your privacy. This Privacy Policy explains what information we collect, how it is used, and your choices when using the DogEar mobile application.
+
+1. Information We Collect
+
+DogEar collects only the information necessary to provide core app functionality.
+
+Information you provide:
+- Email address used to create and manage your account
+- Videos you choose to save within the app
+
+Information collected automatically:
+- User identifiers and device identifiers used for app functionality
+- Push notification tokens used solely to deliver notifications you opt into
+- Subscription and purchase status provided by Apple’s App Store
+
+DogEar does not collect precise location data, contacts, health data, or sensitive personal information.
+
+2. How We Use Information
+
+We use collected information strictly to:
+- Create and manage your DogEar account
+- Save, sync, and display videos you choose to store
+- Deliver optional push notifications
+- Enable subscriptions and restore purchases
+
+DogEar does not use personal data for advertising profiling, cross-app tracking, or analytics unrelated to app functionality.
+
+3. Tracking and Advertising
+
+DogEar does not track users across apps or websites owned by other companies.
+DogEar does not sell personal data.
+
+Ads, if shown, are not based on tracking across other apps.
+
+4. Third-Party Services
+
+DogEar uses the following third-party services to operate app features:
+- OneSignal for push notifications
+- RevenueCat for subscription management
+- Google AdMob for displaying ads
+
+These services may process limited data as required to provide their functionality and are governed by their own privacy policies.
+
+5. Data Retention and Deletion
+
+We retain personal information only for as long as necessary to provide DogEar’s services.
+Users may request account deletion through the app, which removes associated personal data unless retention is required by law.
+
+6. Children’s Privacy
+
+DogEar is not intended for children under the age of 13.
+We do not knowingly collect personal information from children.
+
+7. Security
+
+We take reasonable measures to protect your information. No method of electronic storage or transmission is completely secure.
+
+8. Changes to This Policy
+
+We may update this Privacy Policy from time to time. Changes will be reflected with an updated effective date.
+
+9. Contact
+
+For privacy-related questions, contact:
+hello@dogearhq.com
