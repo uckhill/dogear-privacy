@@ -1,58 +1,529 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DogEar Privacy Policy</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DögEar - Your Private Video Curation App</title>
+    <meta name="description" content="Save and curate short videos from TikTok, YouTube Shorts, and Instagram Reels without algorithms watching you. Take back control of your content.">
     <style>
-      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; padding: 24px; max-width: 900px; margin: 0 auto; line-height: 1.6; }
-      h1,h2 { line-height: 1.25; }
-      .muted { color: #666; }
-      a { color: #0a7; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      code, pre { background: #f6f6f6; padding: 2px 6px; border-radius: 6px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: #FAFAFA;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #9AD5B3 0%, #7EC4A6 100%);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-section img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2C5F3F;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #9AD5B3 0%, #7EC4A6 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2C5F3F;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #111827;
+            font-weight: 800;
+        }
+
+        /* What is DögEar */
+        .what-is {
+            background: white;
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin: 2rem auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .what-is p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #374151;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(154, 213, 179, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2C5F3F;
+        }
+
+        .feature-card p {
+            color: #6B7280;
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #9AD5B3, #7EC4A6);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 60px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(154, 213, 179, 0.4);
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #111827;
+        }
+
+        .step p {
+            color: #6B7280;
+            line-height: 1.6;
+        }
+
+        /* Why I Built This */
+        .story {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #9AD5B3;
+        }
+
+        .story-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-highlight {
+            background: #ECFDF5;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid #9AD5B3;
+        }
+
+        .story-highlight p {
+            font-style: italic;
+            color: #2C5F3F;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: #9AD5B3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #7EC4A6;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .what-is, .story-content {
+                padding: 2rem;
+            }
+
+            .feature-card {
+                padding: 2rem;
+            }
+
+            .steps {
+                gap: 2rem;
+            }
+
+            .logo-text {
+                font-size: 1.4rem;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <h1>DogEar Privacy Policy</h1>
-    <p class="muted">Last updated: 2025-12-16</p>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="LOGO.png" alt="DögEar Logo">
+                <span class="logo-text">DÖGEAR</span>
+            </div>
+            <nav>
+                <a href="/privacy">Privacy Policy</a>
+            </nav>
+        </div>
+    </header>
 
-    <p>DogEar respects your privacy. This Privacy Policy explains what information we collect, how it is used, and your choices when using the DogEar mobile application.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Take Back Control of Your Content</h1>
+            <p>Save and curate short videos from TikTok, YouTube Shorts, and Instagram Reels—without the algorithm watching you.</p>
+            <div class="cta-buttons">
+                <a href="#what-is" class="btn btn-primary">Learn More</a>
+                <a href="#download" class="btn btn-secondary">Download App</a>
+            </div>
+        </div>
+    </section>
 
-    <h2>1. Information We Collect</h2>
-    <ul>
-      <li>Email address used to create and manage your account</li>
-      <li>Videos you choose to save within the app</li>
-      <li>User identifiers and device identifiers used for app functionality</li>
-      <li>Push notification tokens used solely to deliver notifications you opt into</li>
-      <li>Subscription and purchase status provided by Apple’s App Store</li>
-    </ul>
+    <!-- What is DögEar -->
+    <section id="what-is">
+        <h2>What is DögEar?</h2>
+        <div class="what-is">
+            <p>
+                DögEar is a <strong>private video curation app</strong> that lets you save short-form videos from TikTok, YouTube Shorts, and Instagram Reels into your personal collection.
+            </p>
+            <p>
+                No algorithms. No tracking. No endless scrolling. Just <strong>intentional content consumption</strong> on your terms.
+            </p>
+            <p>
+                Create daily compilations of your favorite videos, revisit moments that matter, and build a library of content you actually remember.
+            </p>
+        </div>
 
-    <h2>2. How We Use Information</h2>
-    <ul>
-      <li>Create and manage your DogEar account</li>
-      <li>Save, sync, and display videos you choose to store</li>
-      <li>Deliver optional push notifications</li>
-      <li>Enable subscriptions and restore purchases</li>
-    </ul>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3>Save From Anywhere</h3>
+                <p>Instantly save videos from TikTok, YouTube Shorts, and Instagram Reels with our share extension.</p>
+            </div>
 
-    <h2>3. Tracking and Advertising</h2>
-    <p>DogEar does not track users across apps or websites owned by other companies and does not sell personal data.</p>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>100% Private</h3>
+                <p>Your collection is yours alone. No algorithms building profiles, no data selling, no tracking.</p>
+            </div>
 
-    <h2>4. Third-Party Services</h2>
-    <ul>
-      <li>OneSignal (push notifications)</li>
-      <li>RevenueCat (subscriptions)</li>
-      <li>Google AdMob (ads)</li>
-    </ul>
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3>Daily Compilations</h3>
+                <p>Create automated video compilations from your saved content and relive your best moments.</p>
+            </div>
 
-    <h2>5. Data Retention and Deletion</h2>
-    <p>We retain personal information only for as long as necessary to provide DogEar’s services. Users may request account deletion through the app.</p>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Intentional Viewing</h3>
+                <p>Break free from infinite scroll. You decide what to watch and when to watch it.</p>
+            </div>
 
-    <h2>6. Children’s Privacy</h2>
-    <p>DogEar is not intended for children under the age of 13.</p>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Track Your Mood</h3>
+                <p>Log your emotions alongside your videos and reflect on how content affects you.</p>
+            </div>
 
-    <h2>7. Contact</h2>
-    <p>Email: <a href="mailto:support@dogear.app">hello@dogearhq.com</a></p>
-  </body>
+            <div class="feature-card">
+                <div class="feature-icon">🌙</div>
+                <h3>Anti-Doomscroll</h3>
+                <p>Set daily limits, track your viewing habits, and build healthier content consumption patterns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Download DögEar</h3>
+                    <p>Get the app on iOS and create your free account.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Save Videos</h3>
+                    <p>Use the share sheet on TikTok, YouTube, or Instagram to save videos to DögEar.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Build Your Library</h3>
+                    <p>Your videos are organized by date with thumbnails and titles—easy to browse and revisit.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Create Compilations</h3>
+                    <p>Generate daily or weekly video compilations to relive your favorite moments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why I Built This -->
+    <section class="story">
+        <h2>Why I Built DögEar</h2>
+        <div class="story-content">
+            <p>
+                I was spending hours every day scrolling through TikTok, YouTube Shorts, and Instagram Reels. The algorithm was good—too good. It knew exactly what would keep me watching, and I couldn't stop.
+            </p>
+
+            <p>
+                But here's what bothered me: I always felt <strong>empty afterwards</strong>. Worse, I could never remember any of the videos I'd seen. Hours of my life, gone, with nothing to show for it.
+            </p>
+
+            <div class="story-highlight">
+                <p>
+                    I didn't want to "like" videos because it would affect my algorithm. They were building a profile of me—watching my every move, learning my patterns, feeding me content designed to keep me hooked.
+                </p>
+            </div>
+
+            <p>
+                I wanted something <strong>private</strong>. Something where <em>I</em> controlled what I watched, not an algorithm optimizing for engagement. I wanted to remember the good videos, revisit them, and share them on my own terms.
+            </p>
+
+            <p>
+                So I built DögEar—a place where you can save the videos that matter to you, without anyone watching. No algorithm deciding what you see next. No profile being built. No data being sold.
+            </p>
+
+            <p>
+                Just you, your videos, and the freedom to consume content <strong>intentionally</strong>.
+            </p>
+
+            <p style="margin-top: 2rem; text-align: right; font-style: italic; color: #6B7280;">
+                — Akhil, Creator of DögEar
+            </p>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section id="download" style="text-align: center; background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%); border-radius: 20px; padding: 4rem 2rem;">
+        <h2 style="margin-bottom: 1.5rem;">Ready to Take Back Control?</h2>
+        <p style="font-size: 1.2rem; color: #374151; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Download DögEar today and start curating videos on your terms—no algorithms, no tracking, just you.
+        </p>
+        <a href="#" class="btn btn-primary" style="font-size: 1.2rem;">Download for iOS</a>
+        <p style="margin-top: 1rem; color: #6B7280; font-size: 0.9rem;">Coming soon to Android</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 DögEar. All rights reserved.</p>
+        <p>
+            <a href="/privacy">Privacy Policy</a> | 
+            <a href="mailto:hello@dogearhq.com">Contact Us</a>
+        </p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+            Made with ❤️ for people who want to think for themselves
+        </p>
+    </footer>
+</body>
 </html>
