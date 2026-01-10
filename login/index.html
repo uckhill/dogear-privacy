@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DogEar Login</title>
+  <meta charset="UTF-8" />
+  <title>DogEar Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-    <h1>Login to DogEar</h1>
-    <form method="POST" action="/login">
-        <label for="username">Email:</label>
-        <input type="email" id="username" name="username" autocomplete="username" required><br><br>
+  <h1>Log in to DogEar</h1>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" autocomplete="current-password" required><br><br>
+  <form method="POST" action="/login">
+    <label>
+      Email<br />
+      <input
+        type="email"
+        name="username"
+        autocomplete="username"
+        required
+      />
+    </label>
 
-        <button type="submit">Log In</button>
-    </form>
+    <br /><br />
+
+    <label>
+      Password<br />
+      <input
+        type="password"
+        name="password"
+        autocomplete="current-password"
+        required
+      />
+    </label>
+
+    <br /><br />
+
+    <button type="submit">Log In</button>
+  </form>
 </body>
 </html>
