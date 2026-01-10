@@ -1,14 +1,14 @@
 {
   "webcredentials": {
     "apps": [
-      "TEAMID.org.akhil.scrolless"
+      "3DX8NR7X27.org.akhil.scrolless"
     ]
   },
   "applinks": {
     "apps": [],
     "details": [
       {
-        "appID": "TEAMID.org.akhil.scrolless",
+        "appID": "3DX8NR7X27.org.akhil.scrolless",
         "paths": ["*"]
       }
     ]
