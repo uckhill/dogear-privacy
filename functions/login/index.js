@@ -1,4 +1,8 @@
-export async function onRequestPost({ request }) {
+export async function onRequest({ request }) {
+  if (request.method !== "POST") {
+    return new Response("Method Not Allowed", { status: 405 });
+  }
+
   const formData = await request.formData();
 
   return fetch("https://api.dogearhq.com/login", {
